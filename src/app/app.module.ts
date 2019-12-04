@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     SignupComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
