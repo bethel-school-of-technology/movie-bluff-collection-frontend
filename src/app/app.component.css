@@ -1,5 +1,9 @@
 #header {
     text-align: center;
-    font-family: "Arial Black", Helvetica, sans-serif;
+    font-family: "Futura", "Arial Black", Helvetica, sans-serif;
     color: white;
+}
+
+a {
+    color: palevioletred;
 }
