@@ -9,8 +9,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
 {path: 'signup', component: SignupComponent},
-{path: '**', component: PageNotFoundComponent},
-// {path: '', redirectTo: '/', pathMatch: 'full'}
+// {path: 'login', component: LoginComponent},
+{path: '', redirectTo: '', pathMatch: 'full'},
+{path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
