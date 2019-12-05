@@ -4,12 +4,17 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminComponent } from './admin/admin.component';
+// import { PageNotFoundComponent } from './page'
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent },
   { path: 'admin', component: AdminComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  // { path: '**', component: PageNotFoundComponent}
+
 ];
 
 @NgModule({
