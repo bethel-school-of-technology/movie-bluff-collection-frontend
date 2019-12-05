@@ -1,18 +1,18 @@
 <div class="container signup">
-    <form>
+    <form name="signUpForm">
       <div class="form-group">
         <label for="name">First Name</label>
-        <input type="text" class="form-control" placeholder="John" id="first-name" required>
+        <input type="text" class="form-control" placeholder="John" ng-model="firstName" required>
       </div>
 
       <div class="form-group">
         <label for="name">Last Name</label>
-        <input type="text" class="form-control" placeholder="Smith" id="last-name" required>
+        <input type="text" class="form-control" placeholder="Smith" ng-model="lastName" required>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" class="form-control" placeholder="JohnSmith@gmail.com" id="email" required>
+        <input type="email" class="form-control" placeholder="JohnSmith@gmail.com" id="email" required>
       </div>
 
       <div class="form-group">
@@ -20,7 +20,8 @@
         <input type="text" class="form-control" id="password" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="submit" class="btn btn-danger">Sign Up</button>
 
     </form>
 </div>
+<br><br>
