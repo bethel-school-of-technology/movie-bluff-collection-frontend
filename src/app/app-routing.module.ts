@@ -6,14 +6,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminComponent } from './admin/admin.component';
-// import { PageNotFoundComponent } from './page'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'admin', component: AdminComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  // { path: '**', component: PageNotFoundComponent}
+  { path: 'homepage', component: HomepageComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '**', component: PageNotFoundComponent}
 
 ];
 
