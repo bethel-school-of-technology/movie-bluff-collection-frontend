@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'homepage', component: HomepageComponent},
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 
 ];
