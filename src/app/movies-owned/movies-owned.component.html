@@ -1,0 +1,14 @@
+<div id="search">
+<input [(ngModel)]="title" placeholder="Enter Movie Title"
+    class="form-control"><br>
+    <button (click)="searchMovie(title)"
+    class="btn btn-secondary btn-lg">Search</button>
+</div>
+
+<h2>My Movies</h2>
+<ul>
+    <li *ngFor="let movie of movies">{{ movie.name }}</li>
+    <p>{{movie.owned.id }}. {{movie.owned.title}}: {{movie-owned.genre}}</p>
+</ul>
+
+
