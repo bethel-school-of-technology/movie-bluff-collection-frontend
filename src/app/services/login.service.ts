@@ -8,7 +8,7 @@ import { Login } from '../models/login';
 export class LoginService {
   login: Login[] = [
     {
-      id: 0,
+
       email: 'johnsmith@gmail.com',
       password: 'password'
     }
