@@ -1,7 +1,15 @@
-<div id= "header" style="text-align:center">
-  <h1>
+<div id= "header">
+  <!-- <h1>
   {{ title }}
-  </h1>
+  </h1> -->
+  <mat-toolbar color="primary">
+    <h1 mat-button>{{ title }}</h1>
+  
+      <button mat-button routerLink="homepage">Home</button>
+      <button mat-button routerLink="movies">Movies</button>
+  
+  </mat-toolbar>
+  
   <router-outlet></router-outlet>
 
 

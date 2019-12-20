@@ -1,0 +1,12 @@
+img {
+    max-width: 200px;
+    max-width: 350px;
+}
+
+* {
+    color: white;
+}
+
+#movies-header {
+    color: #c2185b;;
+}

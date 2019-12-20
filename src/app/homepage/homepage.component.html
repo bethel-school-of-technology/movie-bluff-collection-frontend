@@ -1,50 +1,6 @@
-<mat-toolbar color="primary">
-  <h1>My Collection</h1>
-  <button mat-button routerLink="/">Home</button>
-  <button mat-button routerLink="/login">Log Out</button>
-</mat-toolbar>
-
-<!-- Responsive dropdown toolbar-->
-
-<!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <span class="navbar-brand">Movie Buff</span>
-  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item" ngbDropdown>
-        <a class="nav-link" ngbDropdownToggle id="navbarDropdown1" role="button">
-          Menu
-        </a>
-        <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-          <a ngbDropdownItem href="homepage">Home</a>
-          <a ngbDropdownItem href="mycollection">My collection</a>
-          <a ngbDropdownItem href="login">Logout</a>
-        </div>
-      </li>
-      </ul>
-  </div>
-</nav> -->
-
-
-
-<!-- ngFor list of movies -->
-<div>
-  <mat-spinner *ngIf="movies.length === 0"></mat-spinner>
-
-  <mat-card *ngFor = "let movie of movies">
-    <mat-card-header>
-      <mat-card-title>{{movies.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <img src = "{{movies.imageUrl}}" />
-      <p>
-        {{movies.description}}
-      </p>
-    </mat-card-content>
-  </mat-card>
+<div class="jumbotron">
+  <h1>Welcome to {{title}}!</h1>
+  <h3><a routerLink="/signup">Sign Up</a> or <a routerLink="/login">Log In</a></h3>
 </div>
 
   <!-- This is a bootstrap col container to hold movies, just a placeholder -->

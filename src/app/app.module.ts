@@ -1,8 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { MatToolbarModule,
   MatCardModule,
   MatButtonModule,
   MatProgressSpinnerModule } from '@angular/material';
+import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,12 @@ import { MatToolbarModule,
     AdminComponent,
     SignUpComponent,
     HomepageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     NgbModule,
     FormsModule,

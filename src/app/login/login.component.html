@@ -1,12 +1,12 @@
 <div class="login">
-        <h2><a href="login">Login</a></h2>
-        <h2><a href="signup">Sign Up</a></h2>
+        <!-- <h2><a href="login">Login</a></h2>
+        <h2><a href="signup">Sign Up</a></h2> -->
       
 <h2 class="login-header">Log in</h2>
 <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
 
     <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-    <input type="email" placeholder="Email" formControlName="email">
+    <input type="email" placeholder="Email" formControlName="email" ngModel [email]="true">
     </p>
 
     <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">

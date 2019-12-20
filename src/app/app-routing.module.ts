@@ -8,13 +8,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminComponent } from './admin/admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MoviesComponent } from './movies/movies.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'homepage', component: HomepageComponent},
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'movies', component: MoviesComponent},
+  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
   // { path: '**', component: PageNotFoundComponent}
 
 ];

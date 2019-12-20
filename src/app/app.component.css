@@ -1,6 +1,9 @@
 #header {
     text-align: center;
     font-family: "Futura", "Arial Black", Helvetica, sans-serif;
-    color: white;
+}
+
+button {
+    margin-left: 5px;
 }
 

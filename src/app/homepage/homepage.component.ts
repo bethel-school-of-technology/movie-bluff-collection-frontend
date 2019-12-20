@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,15 +9,8 @@ import { DataService } from '../data.service';
 
 export class HomepageComponent implements OnInit {
 
-  movies = [];
+  title = 'Movie Buff Collection';
+  constructor() { }
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit() {
-    this.dataService.sendGetRequest().subscribe((data: any[]) => {
-      console.log(data);
-      this.movies = data;
-    });
-  }
-
+  ngOnInit() {  }
 }
