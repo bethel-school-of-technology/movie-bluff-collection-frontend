@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { AuthService } from '../auth.service';
+=======
+>>>>>>> 5b86c58681ce3e88e2bafa281b9be84e75745e42
 
 @Component({
   selector: 'app-login',
@@ -11,6 +14,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
 
   loginForm: FormGroup;
@@ -34,4 +38,11 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value);
     this.router.navigateByUrl('/admin');
   }
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> 5b86c58681ce3e88e2bafa281b9be84e75745e42
 }

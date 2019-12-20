@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 @import  url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
     background: rgb(80, 113, 146);
     font-family: 'Open Sans', sans-serif;
 }
+=======
+/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+>>>>>>> 5b86c58681ce3e88e2bafa281b9be84e75745e42
 body {
     background-image: url("./assets/images/movietheater.jpg")
 }
