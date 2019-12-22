@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../user';
-import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
+  constructor( private router: Router, private formBuilder: FormBuilder ) { }
 
   loginForm: FormGroup;
   isSubmitted = false;
@@ -31,7 +30,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.authService.login(this.loginForm.value);
     this.router.navigateByUrl('/admin');
   }
 }
