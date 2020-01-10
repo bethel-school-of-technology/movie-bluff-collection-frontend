@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { AuthService } from '../auth.service';
-=======
->>>>>>> 5b86c58681ce3e88e2bafa281b9be84e75745e42
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -13,36 +11,24 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  users: User[] = [];
+  @Output() dataPath: string;
 
-<<<<<<< HEAD
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   loginForm: FormGroup;
   isSubmitted = false;
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+    this.http.get<User[]>(this.dataPath).subscribe(users => {
+      this.users = users;
     });
   }
 
-  get formControls() { return this.loginForm.controls; }
-
-  login() {
-    console.log(this.loginForm.value);
-    this.isSubmitted = true;
-    if (this.loginForm.invalid) {
+  login(form: NgForm) {
+    if (form.invalid) {
       return;
     }
-    this.authService.login(this.loginForm.value);
-    this.router.navigateByUrl('/admin');
+    form.resetForm();
   }
-=======
-  constructor() { }
-
-  ngOnInit() {
-  }
-
->>>>>>> 5b86c58681ce3e88e2bafa281b9be84e75745e42
 }

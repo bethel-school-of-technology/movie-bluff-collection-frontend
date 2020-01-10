@@ -1,6 +1,15 @@
+mat-card {
+  width: 60%;
+  margin: 1rem auto;
+  display: block;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+form {
+  margin: auto;
+  text-align: center;
+}
 
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 a {
   color: palegoldenrod;
@@ -43,6 +52,7 @@ a {
 
 .login p {
   padding: 12px;
+  text-align: center
 }
 
 .login input {
@@ -88,4 +98,4 @@ a {
 .has-error input[type="password"] {
     border-color: rgb(216, 12, 12);
     color: rgb(230, 14, 14);
-}
+} */

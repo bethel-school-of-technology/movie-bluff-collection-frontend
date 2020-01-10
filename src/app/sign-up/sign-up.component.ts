@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../models/user';
+import { User } from '../user.model';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -10,27 +11,26 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+  users: User[] = [];
+  @Output() dataPath: string;
 
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private http: HttpClient, private authService: AuthService,
+              private router: Router, private formBuilder: FormBuilder) { }
 
   signUpForm: FormGroup;
   isSubmitted = false;
 
   ngOnInit() {
-    this.signUpForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+    this.http.get<User[]>(this.dataPath).subscribe(users => {
+      this.users = users;
     });
   }
-  get formControls() { return this.signUpForm.controls; }
 
-  submit() {
-    console.log('It is working');
-    this.isSubmitted = true;
-    if (this.signUpForm.invalid) {
+  addUser(form: NgForm) {
+    if (form.invalid) {
       return;
     }
-    this.router.navigateByUrl('/movies');
-    this.authService.login(this.signUpForm.value);
+    form.resetForm();
+   }
+
   }
-}
