@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../user.model';
 import { AuthService } from '../auth.service';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,16 +23,19 @@ export class SignUpComponent implements OnInit {
   isSubmitted = false;
 
   ngOnInit() {
-    this.http.get<User[]>(this.dataPath).subscribe(users => {
+    this.http.get<User[]>('http://localhost:3100/users').subscribe(users => {
       this.users = users;
     });
   }
 
-  addUser(form: NgForm) {
+  addUser(form: NgForm, user: User): Observable<User> {
     if (form.invalid) {
       return;
     }
-    form.resetForm();
-   }
+    console.log(form.value.email);
 
+    form.resetForm();
+    return this.http.post<User>('http://localhost:3100/users/signup', user);
   }
+
+}

@@ -11,6 +11,7 @@
         ngModel
         required
         placeholder="Email@example.com"
+        minlength="4"
         #email= "ngModel">
       <mat-error *ngIf="email.invalid">Please enter a valid email address.</mat-error>
     </mat-form-field><br>
