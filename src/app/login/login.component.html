@@ -6,9 +6,10 @@
   <form (submit)="login(loginForm)" #loginForm="ngForm">
     <mat-form-field>
       <input matInput 
-        type="text" 
+        type="email" 
         name="email"
         ngModel
+        email
         required
         placeholder="Email@example.com"
         #email= "ngModel">

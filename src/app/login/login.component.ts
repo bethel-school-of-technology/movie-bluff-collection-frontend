@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { LoginService } from '../login/login.service';
 
 
 @Component({
@@ -12,8 +15,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  users: User[] = [];
-  @Output() dataPath: string;
+  users: User;
+  loginService: LoginService;
+
 
   constructor(
     private authService: AuthService,
@@ -23,21 +27,18 @@ export class LoginComponent implements OnInit {
     ) { }
 
   loginForm: FormGroup;
-  isSubmitted = false;
 
-  ngOnInit() {
-    this.http.get<User[]>('http://localhost:3100/users').subscribe(users => {
-      this.users = users;
-    });
-  }
+  ngOnInit() {}
 
-  login(form: NgForm, user: User) {
+  login(form: NgForm, user: User): Observable<User> {
     if (form.invalid) {
       return;
     }
     console.log(form.value.email);
-
     form.resetForm();
-    return this.http.get<User>('http://localhost:3100/users/login');
+
+    if (status === '200' && form.valid) {
+      this.loginService.login(user).subscribe();
+    }
   }
 }

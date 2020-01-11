@@ -1,14 +1,16 @@
 <div class="jumbotron">
   <h1 style="text-align: center;">Sign up</h1>
+  <h3>If you dare...</h3>
 </div>
 
 <mat-card>
   <form (submit)="addUser(signUpForm)" #signUpForm="ngForm">
     <mat-form-field>
       <input matInput 
-        type="text" 
+        type="email" 
         name="email"
         ngModel
+        email
         required
         placeholder="Email@example.com"
         minlength="4"
@@ -58,16 +60,16 @@
       </p>
   </form>
   </div> -->
-    <!-- This is a bootstrap col container to hold movies, just a placeholder -->
+
     <div class="container homepage">
       <div class="row">
-        <div class="col-sm">
+        <div class="col-md">
           <img src="../assets/images/mysteryposter.jpeg">
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           <img src="../assets/images/horrerposter.jpeg">
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           <img src="../assets/images/thrillerposter.jpeg">
         </div>
       </div>
