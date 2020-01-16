@@ -1,9 +1,12 @@
 import { Injectable } from "@angular/core";
 import {Http, Response } from "@angular/http";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {HttpModule} from "@angular/http";
 import {Observable, Subject} from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {Movie} from '../movie';
 
 @Injectable ()
 export class MovieServiceClient {
@@ -14,5 +17,11 @@ export class MovieServiceClient {
                 return response.json();
             });
     }
+    httpOptions = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      };
+
     constructor (private http: Http) {}
 }
+       
+

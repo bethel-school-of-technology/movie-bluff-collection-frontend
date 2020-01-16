@@ -1,7 +1,6 @@
 h2 {
   font-family: "Arial Black", Helvetica, sans-serif;
   color: white;
-  text-align: left;
 }
 
 #search {
@@ -9,8 +8,6 @@ h2 {
   font-size: medium;
   font-weight: bold;
   color: white;
-  text-align: left;
-  width: 75%;
 }
 
 ul {
@@ -20,8 +17,8 @@ ul {
   color: white;
   text-align: center;
   list-style-type: none;
-  width: 50%;
   padding: 0;
+  float: center;
 }
 
 ul li {
@@ -30,4 +27,36 @@ ul li {
   background-color: black;
   opacity: 0.8;
   padding: 0;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+}
+
+.watched .badge {
+  display: inline-block;
+  font-size: medium;
+  color: black;
+  padding: 2;
+  background-color: yellow;
+  line-height: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.delete {
+  float: right;
+  background-color: red;
+  color: white;
+  padding: 0;
+  border-radius: 5px;
+  margin-right: 1em;
+  font-size: medium;
+  font-family: "Arial", Helvetica, sans-serif;
 }

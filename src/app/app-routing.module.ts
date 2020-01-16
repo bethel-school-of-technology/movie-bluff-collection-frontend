@@ -15,7 +15,8 @@ const routes: Routes = [
     path: 'owned-list',
     component: OwnedListComponent
   },
-  { path: 'wish-list',
+  { 
+    path: 'wish-list',
     component: WishListComponent
   },
 ];
