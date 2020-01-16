@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { MatToolbarModule,
-      MatIconModule,
-      MatCardModule,
-      MatButtonModule,
-      MatCheckboxModule,
-      MatProgressSpinnerModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -26,13 +28,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     NoopAnimationsModule,
-    MatToolbarModule, 
-    MatIconModule, 
-    MatCardModule, 
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
     MatProgressSpinnerModule

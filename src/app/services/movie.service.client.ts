@@ -1,16 +1,17 @@
 import { Injectable } from "@angular/core";
-import {Http, Response } from "@angular/http";
+import { Http, Response } from "@angular/http";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {HttpModule} from "@angular/http";
-import {Observable, Subject} from 'rxjs';
+import { HttpModule } from "@angular/http";
+import { Observable, Subject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {Movie} from '../movie';
+import { Movie } from '../movie';
 
-@Injectable ()
+@Injectable()
+
 export class MovieServiceClient {
-    searchMovieByTitle(title: String) {
+    searchMovieByTitle(title: string) {
         const url = 'http://www.omdbapi.com/?s=' + title + '&apikey=59216712';
         return this.http.get(url)
             .map((response: Response) => {
@@ -19,9 +20,21 @@ export class MovieServiceClient {
     }
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-      };
+    };
 
-    constructor (private http: Http) {}
+    constructor(private http: HttpClient) { }
 }
-       
 
+
+configUrl = 'assets/config.json';
+
+getMovie() {
+    return this.http.get(this.configUrl);
+}
+showConfig() {
+    this.configService.getConfig()
+        .subscribe((data: Config) => this.config = {
+            heroesUrl: data['heroesUrl'],
+            textfile: data['textfile']
+        });
+}

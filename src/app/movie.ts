@@ -1,6 +1,6 @@
 export class Movie {
-    imdbID: string;
-    watched: boolean;
-    owned: boolean;
-    wishlist: boolean;
+    imdbId: string;
+    watchedList: boolean;
+    ownedList: boolean;
+    wishedList: boolean;
 }

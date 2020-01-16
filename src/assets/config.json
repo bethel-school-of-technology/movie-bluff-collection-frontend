@@ -1,0 +1,5 @@
+{
+    "wishListsUrl": "http://localhost:3001/wish-list",
+    "ownedMoviesUrl": "http://localhost:3001/owned-movies",
+    "watchedMoviesUrl": "http://localhost:3001/watched-movies"
+}
