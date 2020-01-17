@@ -1,6 +1,8 @@
+<div class="jumbotron">
 <h3>My Watched Movies</h3>
+</div>
 
-<div id="search">
+<div id="search" class="container">
     <input [(ngModel)]="title" placeholder="Enter Movie Title..."
         class="text" style="width:50%"/>
         <br><br>
@@ -8,7 +10,7 @@
         class="btn btn-secondary btn-lg">Search</button>
         <br><br>
 </div>
-<div id="lists">
+<div id="lists" class="container">
     <ul class="list-group">
     <li class="list-group-item" *ngFor="let movie of result.Search">
         <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank" style="color: yellow">
