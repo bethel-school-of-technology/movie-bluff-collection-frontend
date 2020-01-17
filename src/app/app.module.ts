@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { MatToolbarModule,
+      MatInputModule,
+      MatExpansionModule,
       MatIconModule,
       MatCardModule,
       MatButtonModule,
@@ -16,23 +18,36 @@ import { WatchedListComponent } from './modules/watched-list/watched-list.compon
 import { OwnedListComponent } from './modules/owned-list/owned-list.component';
 import { WishListComponent } from './modules/wish-list/wish-list.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SignUpComponent } from './modules/sign-up/sign-up.component';
+import { LoginComponent } from './modules/login/login.component';
+import { HeaderComponent } from './modules/header/header.component';
+import { HomepageComponent } from './modules/homepage/homepage.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WatchedListComponent,
     OwnedListComponent,
-    WishListComponent
+    WishListComponent,
+    SignUpComponent,
+    LoginComponent,
+    HeaderComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     NoopAnimationsModule,
-    MatToolbarModule, 
-    MatIconModule, 
-    MatCardModule, 
+    MatToolbarModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
     MatProgressSpinnerModule
