@@ -6,8 +6,7 @@
     <input [(ngModel)]="title" placeholder="Enter Movie Title..."
         class="text" style="width:50%"/>
         <br><br>
-    <button (click)="searchMovie(title)" 
-        class="btn btn-secondary btn-lg">Search</button>
+    <button class="btn btn-primary btn-lg" (click)="searchMovie(title)">Search</button>
         <br><br>
 </div>
 <div id="lists" class="container">
@@ -17,7 +16,14 @@
         <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
         {{movie.Title}} ({{movie.Year}})
         </a>
-        <br>
+        <ul>
+            <li><button mat-button (click)="addWatched">+ Watch List</button></li>
+            <li><button mat-button (click)="addOwned">+ Owned</button></li>
+            <li><button mat-button (click)="addWish">+ Wishlist</button></li>
+        </ul>
+        
+        
+        <!-- <br>
         Add to: <input type="checkbox" name="addWatched">
                 <label for="addWatched" style="margin-right: 3px" style="margin-right: 15px"> Watched </label>
                 <input type="checkbox" name="addOwned">
@@ -25,7 +31,7 @@
                 <input type="checkbox" name="addWish">
                 <label for="addWish" style="margin-right: 3px" style="margin-right: 15px"> Wishlist </label>
         <br>
-        <button class="btn btn-success btn-sm" style="color:white">Submit</button>
+        <button mat-raised-button class="btn btn-success btn-sm" style="color:white">Submit</button> -->
     </li>
     </ul>
 </div>
