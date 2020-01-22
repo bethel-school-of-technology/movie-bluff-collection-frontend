@@ -6,73 +6,44 @@
 <mat-card>
   <form (submit)="addUser(signUpForm)" #signUpForm="ngForm">
     <mat-form-field>
-      <input matInput 
-        type="email" 
-        name="email"
-        ngModel
-        email
-        required
-        placeholder="Email@example.com"
-        minlength="4"
-        #email= "ngModel">
-      <mat-error *ngIf="email.invalid">Please enter a valid email address.</mat-error>
-    </mat-form-field><br><hr>
+      <input matInput type="firstName" name="firstName" ngModel firstName required placeholder="First Name"
+        #firstName="ngModel">
+      <mat-error *ngIf="firstName.invalid">Please enter a name.</mat-error>
+    </mat-form-field><br>
+    <hr>
     <mat-form-field>
-      <input matInput
-        type="password"
-        name="password"
-        ngModel
-        required
-        placeholder="Password"
-        #password="ngModel">
+      <input matInput type="lastName" name="lastName" ngModel lastName required placeholder="Last Name"
+        #lastName="ngModel">
+      <mat-error *ngIf="lastName.invalid">Please enter a last name.</mat-error>
+    </mat-form-field><br>
+    <hr>
+    <mat-form-field>
+      <input matInput type="email" name="email" ngModel email required placeholder="Email@example.com" minlength="4"
+        #email="ngModel">
+      <mat-error *ngIf="email.invalid">Please enter a valid email address.</mat-error>
+    </mat-form-field><br>
+    <hr>
+    <mat-form-field>
+      <input matInput type="password" name="password" ngModel required placeholder="Password" #password="ngModel">
       <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
-    </mat-form-field><br><hr>
-    <button mat-raised-button
-      color="primary"
-      type="submit">Sign Up</button>
+    </mat-form-field><br>
+    <hr>
+    <button mat-raised-button color="primary" type="submit">Sign Up</button>
   </form>
 </mat-card>
 
 
-<!-- <div class="login">
-      
-  <h2 class="login-header">Sign Up</h2>
-  <form [formGroup]="signUpForm" class="login-container" (submit)="addUser()">
-  
-      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-      <input type="email" placeholder="Email" formControlName="email" name="userId" ngModel [email]="true">
-      </p>
-  
-      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-      <div *ngIf="formControls.email.errors.required">Email is required</div>
-      </div>
-  
-      <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-      <input type="password" placeholder="Password" formControlName="password">
-      </p>
-  
-      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-      <div *ngIf="formControls.password.errors.required">Password is required</div>
-      </div>
-  
-      <p>
-        <button mat-raised-button color="primary" type="submit">Sign Up</button>
-      </p>
-  </form>
-  </div> -->
 
-    <div class="container homepage">
-      <div class="row">
-        <div class="col-md">
-          <img src="../assets/images/mysteryposter.jpeg">
-        </div>
-        <div class="col-md">
-          <img src="../assets/images/horrerposter.jpeg">
-        </div>
-        <div class="col-md">
-          <img src="../assets/images/thrillerposter.jpeg">
-        </div>
-      </div>
+<div class="container homepage">
+  <div class="row">
+    <div class="col-md">
+      <img src="../assets/images/mysteryposter.jpeg">
     </div>
-   
-  
+    <div class="col-md">
+      <img src="../assets/images/horrerposter.jpeg">
+    </div>
+    <div class="col-md">
+      <img src="../assets/images/thrillerposter.jpeg">
+    </div>
+  </div>
+</div>
