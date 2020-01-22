@@ -12,7 +12,7 @@ import { User } from '../../models/users/user';
 })
 
 export class LoginComponent implements OnInit {
-  user: User[];
+  user: User;
 
 
   constructor(private http: HttpClient, private movieService: MovieServiceClient) {}
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    return this.http.post<User>('http://localhost:3100/users', this.user);
+    return this.http.post<User>('http://localhost:3001/users/login', this.user);
   }
 
   ngOnInit() {}

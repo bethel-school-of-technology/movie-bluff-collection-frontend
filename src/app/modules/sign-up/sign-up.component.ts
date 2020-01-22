@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 
 export class SignUpComponent implements OnInit {
   user: User[];
-  apiRoot = 'http://localhost:3100/users';
+  apiRoot = 'http://localhost:3001/users';
  
 
   constructor(private http: HttpClient, private movieService: MovieServiceClient) { }
@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
       return;
     }
     // Using fetch() to handle POST
-    fetch('https://localhost:3100/users', {
+    fetch('https://localhost:3001/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

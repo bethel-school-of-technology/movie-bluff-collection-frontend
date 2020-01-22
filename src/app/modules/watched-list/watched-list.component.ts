@@ -7,9 +7,9 @@ import { MovieServiceClient } from 'src/app/services/movie.service.client';
   styleUrls: ['./watched-list.component.css']
 })
 export class WatchedListComponent implements OnInit {
-  title: String;
-  result: Object;
-  searchMovie(title: String) {
+  title: string;
+  result: object;
+  searchMovie(title: string) {
     this.movieService.searchMovieByTitle(title)
     .subscribe( (result) =>  {
       this.result = result;

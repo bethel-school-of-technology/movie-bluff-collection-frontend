@@ -10,7 +10,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   styleUrls: ['./wish-list.component.css']
 })
 export class WishListComponent implements OnInit {
-  apiRoot: string = 'http://localhost:3100/user';
+  apiRoot: string = 'http://localhost:3001/user/wish-list;
   title: String;
   result: Object;
 
