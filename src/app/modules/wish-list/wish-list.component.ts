@@ -3,6 +3,7 @@ import { MovieServiceClient } from 'src/app/services/movie.service.client';
 import { HttpClient } from '@angular/common/http';
 
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Movie } from '../../models/movies/movie';
 
 @Component({
   selector: 'app-wish-list',
@@ -10,9 +11,10 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   styleUrls: ['./wish-list.component.css']
 })
 export class WishListComponent implements OnInit {
-  apiRoot: string = 'http://localhost:3001/user/wish-list;
-  title: String;
-  result: Object;
+  apiRoot = 'http://localhost:3001/users';
+  title: string;
+  result: object;
+  movie: Movie[];
 
   searchMovie(title: string) {
     this.movieService.searchMovieByTitle(title)
@@ -25,20 +27,20 @@ export class WishListComponent implements OnInit {
 
   addWatched() {
     console.log('button pushed');
-    const url = `${this.apiRoot}/watchList`;
-    this.http.post(url).subscribe( res => console.log(res.json()));
+    const url = `${this.apiRoot}/watched-movies`;
+    this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
 }
 
 addWish() {
   console.log('wish');
-  const url = `${this.apiRoot}/wishList`;
-  this.http.post(url).subscribe( res => console.log(res.json()));
+  const url = `${this.apiRoot}/wish-list`;
+  this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
 }
 
 addOwned() {
   console.log('owned');
-  const url = `${this.apiRoot}/ownedList`;
-  this.http.post(url).subscribe(res => console.log(res.json()));
+  const url = `${this.apiRoot}/owned-movies`;
+  this.http.post(url, this.movie).subscribe(res => console.log(res.json()));
 }
 
   ngOnInit() {

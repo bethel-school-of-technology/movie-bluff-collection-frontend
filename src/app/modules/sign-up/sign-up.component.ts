@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class SignUpComponent implements OnInit {
   user: User[];
   apiRoot = 'http://localhost:3001/users';
- 
+
 
   constructor(private http: HttpClient, private movieService: MovieServiceClient) { }
 
