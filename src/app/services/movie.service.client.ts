@@ -14,17 +14,6 @@ export class MovieServiceClient {
                 return response.json();
             });
     }
+
     constructor(private http: Http) {}
-
-    addWatched() {
-
-    };
-
-    addWish() {
-
-    };
-
-    addOwned() {
-
-    };
 }

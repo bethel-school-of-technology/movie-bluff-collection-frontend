@@ -5,12 +5,13 @@ h2 {
 }
 
 #search {
-  font-family: "Arial Black", Helvetica, sans-serif;
+  font-family: Futura, "Arial Black", Helvetica, sans-serif;
   font-size: medium;
   font-weight: bold;
   color: white;
   text-align: left;
   width: 75%;
+  margin: auto;
 }
 
 ul {
@@ -30,4 +31,14 @@ ul li {
   background-color: black;
   opacity: 0.8;
   padding: 0;
+}
+
+.list-item {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.lists {
+  margin: 5 0;
 }
