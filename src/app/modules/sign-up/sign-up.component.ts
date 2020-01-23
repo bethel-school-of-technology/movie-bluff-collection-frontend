@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
       return;
     }
     // Using fetch() to handle POST
-    fetch('https://localhost:3001/users/signup', {
+    fetch('https://localhost:3001/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

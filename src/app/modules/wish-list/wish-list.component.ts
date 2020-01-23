@@ -11,7 +11,7 @@ import { Movie } from '../../models/movies/movie';
   styleUrls: ['./wish-list.component.css']
 })
 export class WishListComponent implements OnInit {
-  apiRoot = 'http://localhost:3001/users';
+  apiRoot = 'http://localhost:3001';
   title: string;
   result: object;
   movie: Movie[];

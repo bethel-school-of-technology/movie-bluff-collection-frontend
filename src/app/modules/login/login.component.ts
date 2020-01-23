@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    return this.http.post<User>('http://localhost:3001/users/login', this.user);
+    return this.http.get<User>('http://localhost:3001/user/login');
+
   }
 
   ngOnInit() {}
