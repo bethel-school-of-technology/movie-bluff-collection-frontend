@@ -1,0 +1,13 @@
+<h2>Admin</h2>
+
+<h3>View users:</h3>
+
+<div>
+    <ul>
+        <li *ngFor="let users of result.Search">
+            <span class="badge">{{user.firstName}} {{user.lastName}}</span>
+
+            <button class="delete" title="delete user" (click)="delete(user)"> -delete- </button>
+        </li>
+    </ul>
+</div>

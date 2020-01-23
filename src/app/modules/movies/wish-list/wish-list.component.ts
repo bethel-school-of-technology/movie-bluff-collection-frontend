@@ -7,9 +7,9 @@ import { MovieServiceClient } from 'src/app/services/movie.service.client';
   styleUrls: ['./wish-list.component.css']
 })
 export class WishListComponent implements OnInit {
-  title: String;
-  result: Object;
-  searchMovie(title: String) {
+  title: string;
+  result: object;
+  searchMovie(title: string) {
     this.movieService.searchMovieByTitle(title)
     .subscribe( (result) =>  {
       this.result = result;

@@ -1,0 +1,29 @@
+<!-- <h3>Login User</h3>
+<p>
+  <input [(ngModel)]="user.email" placeholder="email" />
+  <br />
+  <input [(ngModel)]="user.password" placeholder="password" />
+  <br />
+  <button (click)="login()">login</button>
+</p> -->
+
+<div class="jumbotron">
+  <h1 style="text-align: center;">Log In</h1>
+</div>
+
+<mat-card>
+  <form (submit)="login(loginForm)" #loginForm="ngForm">
+    <mat-form-field>
+      <input matInput type="email" name="email" ngModel email required placeholder="Email@example.com" minlength="4"
+        #email="ngModel">
+      <mat-error *ngIf="email.invalid">Please enter a valid email address.</mat-error>
+    </mat-form-field><br>
+    <hr>
+    <mat-form-field>
+      <input matInput type="password" name="password" ngModel required placeholder="Password" #password="ngModel">
+      <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
+    </mat-form-field><br>
+    <hr>
+    <button mat-raised-button color="primary" type="submit">Log In</button>
+  </form>
+</mat-card>

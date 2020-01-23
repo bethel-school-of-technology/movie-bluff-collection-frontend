@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MovieServiceClient } from 'src/app/services/movie.service.client';
 
 @Component({
-  selector: 'app-owned-list',
-  templateUrl: './owned-list.component.html',
-  styleUrls: ['./owned-list.component.css']
+  selector: 'app-search-movies-list',
+  templateUrl: './search-movies.component.html',
+  styleUrls: ['./search-movies.component.css']
 })
-export class OwnedListComponent implements OnInit {
-  title: String;
-  result: Object;
-  searchMovie(title: String) {
+export class SearchMoviesComponent implements OnInit {
+  title: string;
+  result: object;
+  searchMovie(title: string) {
     this.movieService.searchMovieByTitle(title)
     .subscribe( (result) =>  {
       this.result = result;
