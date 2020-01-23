@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 // import { Component, OnInit } from '@angular/core';
 // import { User } from '../../../models/users/user';
 // import { UserService } from './../../../user.service';
@@ -48,9 +49,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { MovieServiceClient } from 'src/app/services/movie.service.client';
+import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../models/users/user';
-
+import { Router, Routes } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
   user: User;
 
 
-  constructor(private http: HttpClient, private movieService: MovieServiceClient) {}
+  constructor(private http: HttpClient, private userService: UserService, private router: Router) {}
 
   login(form: NgForm) {
     if (form.invalid) {
@@ -86,8 +87,6 @@ export class LoginComponent implements OnInit {
       .catch((error) => {
         console.log('Error: ', error);
       });
-
-    // return this.http.post<User>('http://localhost:3001/users/login', form.value);
   }
 
   ngOnInit() {}

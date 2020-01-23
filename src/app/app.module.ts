@@ -26,7 +26,6 @@ import { WatchedListComponent } from './modules/movies/watched-list/watched-list
 import { OwnedListComponent } from './modules/movies/owned-list/owned-list.component';
 import { WishListComponent } from './modules/movies/wish-list/wish-list.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
 import { SearchMoviesComponent } from './modules/movies/search-movies/search-movies.component';
 
 
@@ -40,7 +39,6 @@ import { SearchMoviesComponent } from './modules/movies/search-movies/search-mov
     OwnedListComponent,
     WishListComponent,
     HomepageComponent,
-    HeaderComponent,
     SearchMoviesComponent
   ],
   imports: [
