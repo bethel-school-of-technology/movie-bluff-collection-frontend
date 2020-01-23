@@ -1,18 +1,5 @@
-<!-- <h3>Register New User</h3>
-<p>
-  <input [(ngModel)]="user.firstName" placeholder="First Name" />
-  <br />
-  <input [(ngModel)]="user.lastName" placeholder="Last Name" />
-  <br />
-  <input [(ngModel)]="user.email" placeholder="email" />
-  <br />
-  <input [(ngModel)]="user.password" placeholder="password" />
-  <br />
-  <button (click)="signup()">Sign Up</button>
-</p> -->
-
-<div class="jumbotron">
-  <h1 style="text-align: center;">Sign up</h1>
+<div class="signup">
+  <h1>Sign up</h1>
   <h3>If you dare...</h3>
 </div>
 
@@ -23,7 +10,6 @@
         #firstName="ngModel">
       <mat-error *ngIf="firstName.invalid">Please enter a name.</mat-error>
     </mat-form-field><br>
-    <hr>
     <mat-form-field>
       <input matInput type="lastName" name="lastName" ngModel lastName required placeholder="Last Name"
         #lastName="ngModel">
@@ -41,22 +27,6 @@
       <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
     </mat-form-field><br>
     <hr>
-    <button mat-raised-button color="primary" type="submit">Sign Up</button>
+    <button mat-raised-button color="accent" type="submit">Sign Up</button>
   </form>
 </mat-card>
-
-
-
-<div class="container homepage">
-  <div class="row">
-    <div class="col-md">
-      <img src="../assets/images/mysteryposter.jpeg">
-    </div>
-    <div class="col-md">
-      <img src="../assets/images/horrerposter.jpeg">
-    </div>
-    <div class="col-md">
-      <img src="../assets/images/thrillerposter.jpeg">
-    </div>
-  </div>
-</div>

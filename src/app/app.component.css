@@ -1,23 +1,7 @@
-#header {
+#header-brand {
     text-align: center;
-    font-family: "Arial Black", Helvetica, sans-serif;
-    color: white;
+    font-family: Futura, "Arial Black", Helvetica, sans-serif;
+    color: whitesmoke;
+    margin: auto;
 }
 
-.btn {
-    font-family: "Arial Black", Arial, Helvetica, sans-serif;
-    background-color: gray;
-    border: 1px solid white;
-    color: white;
-    text-align: center;
-    font-size: 15px;
-}
-
-matt-toolbar:hover {
-    color: #039be5;
-    background-color: rgb(245, 223, 223);
-  }
- matt-toolbar.active {
-    color: #039be5;
-  }
-  

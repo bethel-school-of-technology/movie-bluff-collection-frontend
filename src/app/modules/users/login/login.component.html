@@ -7,8 +7,8 @@
   <button (click)="login()">login</button>
 </p> -->
 
-<div class="jumbotron">
-  <h1 style="text-align: center;">Log In</h1>
+<div class="login">
+  <h1>Log In</h1>
 </div>
 
 <mat-card>
@@ -24,6 +24,6 @@
       <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
     </mat-form-field><br>
     <hr>
-    <button mat-raised-button color="primary" type="submit">Log In</button>
+    <button mat-raised-button color="accent" type="submit">Log In</button>
   </form>
 </mat-card>

@@ -1,17 +1,16 @@
-<div id= "header" style="text-align:center">
+<div id="header-brand">
+  <div layout="row">
+    <mat-toolbar color="accent">
+      <h1>{{ title }}</h1>
+      <a mat-button class="dropdown-item" routerLink="/watched-list">Watched</a>
+      <a mat-button class="dropdown-item" routerLink="/owned-list">Owned</a>
+      <a mat-button class="dropdown-item" routerLink="/wish-list">Wishlist</a>
+      <a mat-button class="dropdown-item" routerLink='/search-movies'>Search</a>
+      <a mat-button class="dropdown-item" routerLink='/signup'>Sign Up</a> 
+      <a mat-button class="dropdown-item" routerLink='/login'>Login</a>
+    </mat-toolbar>
+  </div>
 
-  <h1>{{ title }}</h1>
-
-<mat-toolbar color="light">
-  <h1 class="navbar-brand">Movie Buff</h1>
-  <button mat-button routerLink="/watched-list">Watched Movies</button>
-  <button mat-button routerLink="/owned-list">Owned Movies</button>
-  <button mat-button routerLink="/wish-list">Wishlist</button>
-  <button mat-button  routerLink='/search-movies'>Search</button>
-  <button mat-button routerLink='/signup'>Sign Up</button> 
-  <button mat-button  routerLink='/login'>Login</button>
-
-</mat-toolbar>
 
 <router-outlet></router-outlet>
 
