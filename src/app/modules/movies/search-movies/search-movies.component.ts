@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { MovieServiceClient } from 'src/app/services/movie.service.client';
 import { Movie } from 'src/app/models/movies/movie';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
+=======
+import { User } from '../../../models/users/user';
+
+>>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
 
 @Component({
   selector: 'app-search-movies-list',
@@ -35,6 +40,7 @@ export class SearchMoviesComponent implements OnInit {
         console.log(result);
       });
   }
+<<<<<<< HEAD
 
   addWatched(imdbId) {
     console.log('watched');
@@ -70,6 +76,8 @@ export class SearchMoviesComponent implements OnInit {
     // const url = `${this.apiRoot}/owned-movies`;
     // this.http.post(url, this.movie).subscribe(res => console.log(res.json()));
   }
+=======
+>>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
 
   addWatched(title, data) {
     console.log('watched');
@@ -81,16 +89,13 @@ export class SearchMoviesComponent implements OnInit {
       },
       body: JSON.stringify(data, title),
       credentials: 'include'
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success', data);
-      })
-      .catch((error) => {
-        console.log('Error ', error);
-      });
+    });
+    // .subscribe(data => this.data = data);
 
-    // this.movie.watchedList = true;
+
+    data.watchedList = true;
+    console.log (data, title);
+    // return (this.movie.value.WatchedListComponent);
     // const url = `${this.apiRoot}/watched-movies`;
     // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
   }

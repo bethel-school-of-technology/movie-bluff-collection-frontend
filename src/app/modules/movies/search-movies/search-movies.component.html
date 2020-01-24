@@ -5,13 +5,14 @@
 <mat-card>
 
 <div id="search" class="container">
-    <input [(ngModel)]="title" placeholder="Enter Movie Title..."
-        class="text" style="width:50%"/>
+    <mat-card>
+        <input [(ngModel)]="title" placeholder="Enter Movie Title..." class="text" style="width:50%" />
         <br><br>
-    <button mat-raised-button color="accent" (click)="searchMovie(title)" class="btn btn-lg">Search</button>
+        <button mat-raised-button color="accent" (click)="searchMovie(title)" class="btn btn-lg">Search</button>
         <br><br>
-</div>
+        <!-- </div> -->
 
+<<<<<<< HEAD
 <!-- Search output list -->
 <mat-card-content>
     <div id="lists" class="container">
@@ -21,22 +22,41 @@
                 <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
                 {{movie.Title}} ({{movie.Year}})
                 </a>
+=======
+        <!-- Search output list -->
+
+        <!-- <div id="lists" class="container"> -->
+        <mat-card-content>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let movie of result.Search">
+                    <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank">
+                        <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
+                        {{movie.Title}} ({{movie.Year}})
+                    </a>
+>>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
                     <ul class="list-item">
-                        <button mat-button (click)="addWatched(imdbId)">+ Watch List</button>
+                        <button mat-button (click)="addWatched(imdbId, userId)">+ Watch List</button>
                         <button mat-button (click)="addOwned()">+ Owned</button>
                         <button mat-button (click)="addWish()">+ Wishlist</button>
                     </ul>
+<<<<<<< HEAD
             </li>
         </ul>
     </div>
 
     </mat-card-content>
     </mat-card>
+=======
+>>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
 
-<!-- Search output list -->
+                </li>
+            </ul>
+        </mat-card-content>
 
-<div id="lists" class="container">
+    </mat-card>
+</div>
 
+<<<<<<< HEAD
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let movie of result.Search">
             <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank">
@@ -53,3 +73,5 @@
         </li>
     </ul>
 </div>
+=======
+>>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
