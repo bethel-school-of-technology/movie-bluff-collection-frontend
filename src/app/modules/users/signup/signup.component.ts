@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
       //   }
 
       //   else {
-      //     //successfull logic here
+      //     //successful logic here
       //   })
     this.router.navigate(['/login']);
 

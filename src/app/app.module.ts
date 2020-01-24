@@ -15,7 +15,7 @@ import {
   MatTabsModule,
   MatSidenavModule
 } from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
+// import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -60,7 +60,6 @@ import { SearchMoviesComponent } from './modules/movies/search-movies/search-mov
     MatButtonModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
-    FlexLayoutModule,
     MatTabsModule,
     MatSidenavModule
   ],
