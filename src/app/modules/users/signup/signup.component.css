@@ -1,6 +1,7 @@
 mat-card {
     width: 80%;
     margin: auto;
+    margin-bottom: 2em;
     text-align: center;
 }
 
