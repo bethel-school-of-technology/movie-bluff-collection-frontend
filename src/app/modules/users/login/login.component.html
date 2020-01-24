@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 <div class="jumbotron">
   <h1 style="text-align: center;">Log In</h1>
+=======
+<!-- <h3>Login User</h3>
+<p>
+  <input [(ngModel)]="user.email" placeholder="email" />
+  <br />
+  <input [(ngModel)]="user.password" placeholder="password" />
+  <br />
+  <button (click)="login()">login</button>
+</p> -->
+
+<div class="login">
+  <h1>Log In</h1>
+>>>>>>> cf82c01a6b5341d47b8ef7dc94dc4f7fe6d55270
 </div>
 
 <mat-card>
@@ -15,6 +29,6 @@
       <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
     </mat-form-field><br>
     <hr>
-    <button mat-raised-button color="primary" type="submit">Log In</button>
+    <button mat-raised-button color="accent" type="submit">Log In</button>
   </form>
 </mat-card>

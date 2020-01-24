@@ -1,5 +1,17 @@
-<div id= "header" style="text-align:center">
+<div id="header-brand">
+  <div layout="row">
+    <mat-toolbar color="accent">
+      <h1>{{ title }}</h1>
+      <a mat-button class="dropdown-item" routerLink="/watched-list">Watched</a>
+      <a mat-button class="dropdown-item" routerLink="/owned-list">Owned</a>
+      <a mat-button class="dropdown-item" routerLink="/wish-list">Wishlist</a>
+      <a mat-button class="dropdown-item" routerLink='/search-movies'>Search</a>
+      <a mat-button class="dropdown-item" routerLink='/signup'>Sign Up</a> 
+      <a mat-button class="dropdown-item" routerLink='/login'>Login</a>
+    </mat-toolbar>
+  </div>
 
+<<<<<<< HEAD
   <h1>{{ title }}</h1>
 
 <mat-toolbar color="light">
@@ -12,6 +24,8 @@
   <button mat-button  routerLink='/login'>Login</button>
 
 </mat-toolbar>
+=======
+>>>>>>> cf82c01a6b5341d47b8ef7dc94dc4f7fe6d55270
 
 <router-outlet></router-outlet>
 
