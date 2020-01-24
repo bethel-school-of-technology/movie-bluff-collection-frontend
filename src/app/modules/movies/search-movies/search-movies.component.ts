@@ -4,11 +4,7 @@ import { Observable } from 'rxjs';
 import { MovieServiceClient } from 'src/app/services/movie.service.client';
 import { Movie } from 'src/app/models/movies/movie';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
-=======
-import { User } from '../../../models/users/user';
-
->>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
+import { User } from 'src/app/models/users/user';
 
 @Component({
   selector: 'app-search-movies-list',
@@ -22,14 +18,14 @@ export class SearchMoviesComponent implements OnInit {
   movie: Movie;
   user: User;
   allowNull: false;
-  data = {
 
-    imdbId: 'string',
-    userId: 'number',
-    ownedList: '',
-    watchedList: '',
-    wishList: '',
-  };
+  // data = {
+  //   imdbId: 'string',
+  //   userId: 'number',
+  //   ownedList: '',
+  //   watchedList: '',
+  //   wishList: '',
+  // };
 
   constructor(private http: HttpClient, private movieService: MovieServiceClient) { }
 
@@ -40,62 +36,28 @@ export class SearchMoviesComponent implements OnInit {
         console.log(result);
       });
   }
-<<<<<<< HEAD
 
-  addWatched(imdbId) {
+  addWatched(movie) {
     console.log('watched');
+    console.log('Id: ' + movie.imdbId)
 
-    fetch('http://localhost:3001/users/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.parse(this.movie.imdbId)
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success', data);
-    })
-    .catch((error) => {
-      console.log('Error ', error);
-    });
+    // fetch('http://localhost:3001/watched-movies', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(movie),
+    //   credentials: 'include'
+    // })
+    //   .then((response) => response.json())
+    //   .then((movie) => {
+    //     console.log('Success', movie.imdbId, movie.title);
+    //   })
+    //   .catch((error) => {
+    //     console.log('Error ', error);
+    //   });
 
-    this.movie.watchedList = true;
-    // const url = `${this.apiRoot}/watched-movies`;
-    // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
-  }
-
-  addWish(imdbId) {
-    console.log('wish');
-    // const url = `${this.apiRoot}/wish-list`;
-    // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
-  }
-
-  addOwned(imdbId) {
-    console.log('owned');
-    // const url = `${this.apiRoot}/owned-movies`;
-    // this.http.post(url, this.movie).subscribe(res => console.log(res.json()));
-  }
-=======
->>>>>>> 740d0f3e28d3314976bf02b03f534464b17fc7f6
-
-  addWatched(title, data) {
-    console.log('watched');
-
-    fetch('http://localhost:3001/watched-movies', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data, title),
-      credentials: 'include'
-    });
-    // .subscribe(data => this.data = data);
-
-
-    data.watchedList = true;
-    console.log (data, title);
-    // return (this.movie.value.WatchedListComponent);
+    // this.movie.watchedList = true;
     // const url = `${this.apiRoot}/watched-movies`;
     // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
   }
