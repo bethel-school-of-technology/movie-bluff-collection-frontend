@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieServiceClient } from 'src/app/services/movie.service.client';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-search-movies-list',
@@ -16,7 +17,7 @@ export class SearchMoviesComponent implements OnInit {
       console.log(result);
     });
   }
-  constructor(private movieService: MovieServiceClient) { }
+  constructor(private movieService: MovieServiceClient, public http: Http) { }
 
   ngOnInit() {
   }

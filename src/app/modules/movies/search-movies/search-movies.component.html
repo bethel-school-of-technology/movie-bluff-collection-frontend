@@ -12,20 +12,18 @@
 <!-- Search output list -->
 <div id="lists" class="container">
     <ul class="list-group">
-    <li class="list-group-item" *ngFor="let movie of result.Search">
-        <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank" style="color: yellow">
-        <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
-        {{movie.Title}} ({{movie.Year}})
-        </a>
-        <br>
-        Add to: <input type="checkbox" name="addWatched">
-                <label for="addWatched" style="margin-right: 3px" style="margin-right: 15px"> Watched </label>
-                <input type="checkbox" name="addOwned">
-                <label for="addOwned" style="margin-right: 3px" style="margin-right: 15px"> Owned </label>
-                <input type="checkbox" name="addWish">
-                <label for="addWish" style="margin-right: 3px" style="margin-right: 15px"> Wishlist </label>
-        <br>
-        <button mat-raised-button color="accent">Submit</button>
-    </li>
+        <li class="list-group-item" *ngFor="let movie of result.Search">
+            <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank" style="color: yellow">
+            <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
+            {{movie.Title}} ({{movie.Year}})
+            </a>
+            <mat-card>
+            <ul class="list-item">
+                <li><button mat-button (click)="addWatched()">+ Watch List</button></li>
+                <li><button mat-button (click)="addOwned()">+ Owned</button></li>
+                <li><button mat-button (click)="addWish()">+ Wishlist</button></li>
+            </ul>
+        </mat-card>
+        </li>
     </ul>
 </div>
