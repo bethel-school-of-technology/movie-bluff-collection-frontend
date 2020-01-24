@@ -13,30 +13,7 @@
 </div>
 
 <!-- Search output list -->
-<mat-card-content>
-    <div id="lists" class="container">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let movie of result.Search">
-                <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank">
-                <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
-                {{movie.Title}} ({{movie.Year}})
-                </a>
-                    <ul class="list-item">
-                        <button mat-button (click)="addWatched(movie.imdbId, users.userId)">+ Watch List</button>
-                        <button mat-button (click)="addOwned()">+ Owned</button>
-                        <button mat-button (click)="addWish()">+ Wishlist</button>
-                    </ul>
-            </li>
-        </ul>
-    </div>
-
-    </mat-card-content>
-    </mat-card>
-
-<!-- Search output list -->
-
 <div id="lists" class="container">
-
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let movie of result.Search">
             <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank">
@@ -45,7 +22,7 @@
             </a>
             <mat-card-content>
                 <ul class="list-item">
-                    <button mat-button (click)="addWatched(movie.imdbId)">+ Watch List</button>
+                    <button mat-button (click)="addWatched(movie.imdbID)">+ Watch List</button>
                     <button mat-button (click)="addOwned()">+ Owned</button>
                     <button mat-button (click)="addWish()">+ Wishlist</button>
                 </ul>
@@ -53,3 +30,9 @@
         </li>
     </ul>
 </div>
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator>
+</mat-card>

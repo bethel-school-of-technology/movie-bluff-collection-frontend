@@ -13,8 +13,10 @@ import {
   MatCheckboxModule,
   MatProgressSpinnerModule,
   MatTabsModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatPaginatorModule,
 } from '@angular/material';
+
 // import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -61,7 +63,8 @@ import { SearchMoviesComponent } from './modules/movies/search-movies/search-mov
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatPaginatorModule
   ],
   providers: [MovieServiceClient],
   bootstrap: [AppComponent]
