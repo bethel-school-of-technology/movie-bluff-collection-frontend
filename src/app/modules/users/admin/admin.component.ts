@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 //   // user: User = new User();
 
-//   constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
 //   admin(): void {
 //     this.userService.admin(this.user).subscribe(() => {

@@ -13,11 +13,3 @@
     font-size: 15px;
 }
 
-matt-toolbar:hover {
-    color: #039be5;
-    background-color: rgb(245, 223, 223);
-  }
- matt-toolbar.active {
-    color: #039be5;
-  }
-  

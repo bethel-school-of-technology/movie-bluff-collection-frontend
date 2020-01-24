@@ -27,31 +27,13 @@ import { RouterModule } from '@angular/router';
 // //     });
 // //   }
 
-//   ngOnInit() {}
-// }
-
-// // import { Component, OnInit } from '@angular/core';
-
-// // @Component({
-// //   selector: 'app-login',
-// //   templateUrl: './login.component.html',
-// //   styleUrls: ['./login.component.css']
-// // })
-// // export class LoginComponent implements OnInit {
-
-// //   constructor() { }
-
-// //   ngOnInit() {
-// //   }
-
-// // }
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../models/users/user';
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -60,6 +42,7 @@ import { Router, Routes } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   user: User;
+  public error: string;
 
 
   constructor(private http: HttpClient, private userService: UserService, private router: Router) {}
@@ -68,9 +51,6 @@ export class LoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-
-    console.log(form);
-    console.log(this.http);
 
     fetch('http://localhost:3001/users/login', {
       method: 'POST',
@@ -83,12 +63,17 @@ export class LoginComponent implements OnInit {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success', data);
+        if (status === '200') { this.router.navigate(['/search-movies']); }
+       // how do you get the status for it to work?);
+
       })
       .catch((error) => {
         console.log('Error: ', error);
+        this.error = 'Sorry wrong password';
       });
   }
 
   ngOnInit() {}
 
   }
+

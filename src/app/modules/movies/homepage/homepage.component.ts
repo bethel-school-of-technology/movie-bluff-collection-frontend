@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -8,7 +10,15 @@ import { RouterModule } from '@angular/router';
 export class HomepageComponent implements OnInit {
   title = 'Movie Buff Collection';
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
+  logout() {
+    this.userService.logout().subscribe(response => {
+      this.userService.loggedIn = false;
+      console.log('logging out');
+      this.router.navigate(['/home']);
+    });
+    return false;
+  }
 
   ngOnInit() {
   }

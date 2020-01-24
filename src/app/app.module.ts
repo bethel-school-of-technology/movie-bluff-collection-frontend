@@ -11,8 +11,11 @@ import {
   MatCardModule,
   MatButtonModule,
   MatCheckboxModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatTabsModule,
+  MatSidenavModule
 } from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -39,7 +42,7 @@ import { SearchMoviesComponent } from './modules/movies/search-movies/search-mov
     OwnedListComponent,
     WishListComponent,
     HomepageComponent,
-    SearchMoviesComponent
+    SearchMoviesComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,10 @@ import { SearchMoviesComponent } from './modules/movies/search-movies/search-mov
     MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FlexLayoutModule,
+    MatTabsModule,
+    MatSidenavModule
   ],
   providers: [MovieServiceClient],
   bootstrap: [AppComponent]
