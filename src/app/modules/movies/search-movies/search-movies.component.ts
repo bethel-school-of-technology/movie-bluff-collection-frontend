@@ -26,11 +26,10 @@ export class SearchMoviesComponent implements OnInit {
   // MatPaginator Output
   pageEvent: PageEvent;
 
- data = {}
+ data = {};
 
   constructor(private http: HttpClient, private movieService: MovieServiceClient) { }
- 
-  
+
   searchMovie(title: string) {
     this.movieService.searchMovieByTitle(title)
       .subscribe((result) => {
@@ -41,13 +40,15 @@ export class SearchMoviesComponent implements OnInit {
 
   addWatched(movie) {
     console.log('watched');
-    console.log('Id: ' + movie)
-    let data = {
+    console.log('Id: ' + movie);
+    const data = {
+      userId: this.user,
       imdbId: movie,
-      ownedList: '',
+      ownedList: false,
       watchedList: true,
-      wishList: '',
+      wishList: false,
     };    // return this.http.get<Movie>(this.apiRoot + 'watched-movies');
+
     fetch('http://localhost:3001/watched-movies', {
       method: 'POST',
       headers: {
@@ -68,58 +69,14 @@ export class SearchMoviesComponent implements OnInit {
     // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
   }
 
-  addWish(movie) {
+  addWish(imdbId) {
     console.log('wish');
-    let data = {
-      imdbId: movie,
-      ownedList: '',
-      watchedList: '',
-      wishList: true,
-    };    // return this.http.get<Movie>(this.apiRoot + 'watched-movies');
-    fetch('http://localhost:3001/wishlist', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      credentials: 'include'
-    })
-      .then((response) => response.json())
-      .then(() => {
-        console.log('Success');
-      })
-      .catch((error) => {
-        console.log('Error ', error);
-      });
-
     // const url = `${this.apiRoot}/wish-list`;
     // this.http.post(url, this.movie).subscribe( res => console.log(res.json()));
   }
 
-  addOwned(movie) {
+  addOwned(imdbId) {
     console.log('owned');
-    let data = {
-      imdbId: movie,
-      ownedList: true,
-      watchedList: '',
-      wishList: '',
-    };    // return this.http.get<Movie>(this.apiRoot + 'watched-movies');
-    fetch('http://localhost:3001/owned-movies', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      credentials: 'include'
-    })
-      .then((response) => response.json())
-      .then(() => {
-        console.log('Success');
-      })
-      .catch((error) => {
-        console.log('Error ', error);
-      });
-
     // const url = `${this.apiRoot}/owned-movies`;
     // this.http.post(url, this.movie).subscribe(res => console.log(res.json()));
   }
