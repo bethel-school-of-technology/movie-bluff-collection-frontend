@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="column">
+        <div id="search">
+        <h4>Search Movie</h4>
+        <input [(ngModel)]="title" placeholder="Enter Movie Title..."
+        class="text" style="width:75%"/>
+        <br><br>
+        <button (click)="searchMovie(title)" 
+        class="btn btn-secondary btn-lg">Search</button>
+        <br><br>
+        </div>
+        <div id="lists">
+        <ul class="list-group">
+        <li class="list-group-item" *ngFor="let movie of result.Search">
+        <a href="http://imdb.com/title/{{movie.imdbID}}" target="_blank" style="color: yellow">
+        <img src="{{movie.Poster}}" class="thumbnail" height="100" width="75"><br>
+        {{movie.Title}} ({{movie.Year}})
+        </a>
+        <br>
+        <button class="btn btn-success btn-sm" style="color:white" 
+        (click)="add(movie.Title)">Add To Owned Movies</button>
+        <p></p>
+        </li>
+        </ul>
+        </div>
+    </div>
+    <div class="column">
+        <h3>My Owned Movies</h3>
+        <ul class="owned">
+            <li *ngFor="let movie of result.Search">
+                <span class="badge">{{movie.Title}}</span>
+
+                <button class="delete" title="delete movie"
+                (click)="delete(movie)"> -delete- </button>
+            </li>
+        </ul>
+    </div>
+</div>
