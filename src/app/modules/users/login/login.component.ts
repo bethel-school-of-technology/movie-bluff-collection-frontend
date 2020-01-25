@@ -1,31 +1,4 @@
-import { RouterModule } from '@angular/router';
-// import { Component, OnInit } from '@angular/core';
-// import { User } from '../../../models/users/user';
-// import { UserService } from './../../../user.service';
-// import { Router } from '@angular/router';
-// // import { movieService } from './../../../movie.service.client';
 
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent implements OnInit {
-// //   user: User = new User();
-// //   constructor(private userService: UserService, private router: Router) {}
-
-// //   login(): void {
-// //     this.userService.loginUser(this.user).subscribe(() => {
-// //       // this.movieService.getUserMovies().subscribe(() => { // ?
-// //         // user logged in
-// //         this.userService.loggedIn = true;
-// //         // send to the search page?
-// //         this.router.navigate(['/userMovies']);
-// //         this.router.navigate(['/search']);
-// //         this.router.navigate(['/watched-list']);
-// //       });
-// //     });
-// //   }
 
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -63,8 +36,7 @@ export class LoginComponent implements OnInit {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success', data);
-        if (status === '200') { this.router.navigate(['/search-movies']); }
-       // how do you get the status for it to work?);
+        this.router.navigate(['/search-movies']);
 
       })
       .catch((error) => {
